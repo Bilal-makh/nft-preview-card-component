@@ -1,0 +1,126 @@
+/* Varialbes */
+:root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+  --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+  --Very-dark-blue-line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--Very-dark-blue-main-BG);
+  color: var(--Soft-blue);
+  font-family: 'Outfit', sans-serif;
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+.card{
+  background-color: var(--Very-dark-blue-card-BG);
+  padding: 20px;
+  box-shadow: 0 12px 2px 20px rgb(10 17 30 / 20%), 0 20px 2px 35px rgb(0 0 0 / 5%);
+  max-width: 350px;
+  border-radius: 10px;
+
+}
+.card .image{
+  width: 310px;
+  height: 310px;
+  position: relative;
+  border-radius: 10px;
+}
+.card img{
+  max-width: 100%;
+  border-radius: 10px;
+}
+.card .image::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: var(--White);
+  border-radius: 10px;
+  background-position: center center;
+  transition: 0.5s;
+}
+.card .image:hover::before{
+  background-color: hsl(178deg 100% 50% / 50%);
+  background-image: url(images/icon-view.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.card .info h3{
+  color: var(--White);
+  margin: 10px 0  20px;
+  cursor: pointer;
+  transition: 0.3s ;
+}
+.card .info p{
+  font-size: 18px;
+  margin-bottom: 20px;
+
+}
+.card .pricing{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.card .pricing .price{
+  color: var(--Cyan);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.card .pricing .price img{
+  margin-right: 5px;
+}
+.card .pricing > .days{
+  display: flex;
+  align-items: center;
+}
+.card .pricing .days > img{
+  width: 15px;
+  margin-right: 6px;
+  /* margin-top: 3px; */
+}
+.card .creation{
+  border-top: 1px solid var(--Very-dark-blue-line);
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+.card .creation img{
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--White);
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.card .creation p {
+  font-weight: 400;
+}
+.card .creation p  a{
+  color: var(--White);
+  text-decoration: none;
+  margin-left: 3px;
+  cursor: pointer;
+  transition: 0.3s ;
+}
+.card .info h3:hover,
+.card .creation p  a:hover{
+  color: var(--Cyan);
+}
